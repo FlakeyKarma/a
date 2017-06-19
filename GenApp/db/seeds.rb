@@ -2,16 +2,18 @@
 	Blog.create!(
 		title: "My blog post #{blogs}",
 		)
-	puts "10 blog posts created"
 end
 
+puts "10 blog posts created"
+
 5.times do |skills|
-	Skill.create!(
-		title: "Rails #{skils}",
+	Skills.create!(
+		title: "Rails #{skills}",
 		percent_utilized: 15
 		)
-	puts "5 skills created"
 end
+
+puts "5 skills created"
 
 9.times do |portfolio_item|
 	Portfolio.create!(
@@ -24,5 +26,6 @@ end
 		main_image: "http://placehold.it/600x400",
 		thumb_image: "http://placehold.it/350x150"
 		)
-	puts "9 portfolio items created"
 end
+
+puts "9 portfolio items created"
