@@ -1,13 +1,13 @@
 10.times do |blogs|
 	Blog.create!(
-		title: "My blog post #{blog}",
+		title: "My blog post #{blogs}",
 		)
 	puts "10 blog posts created"
 end
 
 5.times do |skills|
 	Skill.create!(
-		title: "Rails #{skil}",
+		title: "Rails #{skils}",
 		percent_utilized: 15
 		)
 	puts "5 skills created"
