@@ -1,6 +1,11 @@
 class PortfoliosController < ApplicationController
 	def index
+		#@portfolio_items = Portfolio.A
+		#@portfolio_items = Portfolio.rub
 		@portfolio_items = Portfolio.all
+	end
+	def angular
+		@angular_portfolio_items = Portfolio.A
 	end
 	def new
 		@portfolio_items = Portfolio.new
