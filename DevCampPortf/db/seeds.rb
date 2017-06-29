@@ -8,7 +8,8 @@
 10.times do |blogs|
 	Blog.create!(
 		title: "My blog post #{blogs}",
-		body: "J"
+		body: "J",
+		#topic_id: Topic.last.id
 		)
 end
 
