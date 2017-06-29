@@ -9,7 +9,11 @@ Rails.application.routes.draw do
   get 'About-me', to: 'pages#about'
   get 'Talk-to-me', to: 'pages#contact'
 
-  resources :blogs
+  resources :blogs do
+    member do
+      get :toggle_status
+    end
+  end
 
   root to: 'pages#home'
 end
