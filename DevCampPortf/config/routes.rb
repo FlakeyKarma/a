@@ -6,8 +6,8 @@ Rails.application.routes.draw do
   get 'angular-items', to: 'portfolios#angular'
   get 'portfolios/:id', to: 'portfolios#show', as: 'portfolio_show'
 
-  get 'About-me', to: 'pages#about'
-  get 'Talk-to-me', to: 'pages#contact'
+  get 'about-me', to: 'pages#about'
+  get 'talk-to-me', to: 'pages#contact'
 
   resources :blogs do
     member do
