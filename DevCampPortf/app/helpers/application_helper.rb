@@ -8,4 +8,10 @@ module ApplicationHelper
 			(link_to "Sign back in!", new_user_session_path)
 		end
 	end
+	def sourceH(layout_name)
+		    if session[:source]
+		    	a = "Thanks for visiting me on the #{layout_name} page from #{session[:source]}!!"
+				content_tag(:p, a, class: "sourceG")
+		    end
+	end
 end
