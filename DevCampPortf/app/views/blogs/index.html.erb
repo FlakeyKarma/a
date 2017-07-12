@@ -13,9 +13,7 @@
   </thead>
 
   <tbody>
-    <% @blogs.each do |blog| %>
-      <%= render "blogs/blog" %>
-    <% end %>
+    <%= render @blogs %>
   </tbody>
 </table>
 

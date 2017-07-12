@@ -1,13 +1,17 @@
 Rails.application.routes.draw do
   resources :topics, only: [:index, :show]
-  devise_for :users, path: '', path_names: {sign_in: 'login', sign_out: 'logout', sign_up: 'register'}
+
+  devise_for :users, path: '', path_names: { sign_in: 'login', sign_out: 'logout', sign_up: 'register' }
   resources :users
-  resources :portfolios, except: [:show]
+  resources :portfolios, except: [:show] do
+    put :sort, on: :collection
+  end
   get 'angular-items', to: 'portfolios#angular'
   get 'portfolios/:id', to: 'portfolios#show', as: 'portfolio_show'
 
   get 'about-me', to: 'pages#about'
   get 'talk-to-me', to: 'pages#contact'
+  get 'tech-news', to: 'pages#tech_news'
 
   resources :blogs do
     member do
@@ -15,5 +19,7 @@ Rails.application.routes.draw do
     end
   end
 
+  mount ActionCable.server => '/cable'
+  
   root to: 'pages#home'
 end
