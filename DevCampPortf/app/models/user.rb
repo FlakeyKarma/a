@@ -7,8 +7,6 @@ class User < ApplicationRecord
   
   validates_presence_of :name
   
-  a = self.name.split
-        
   def first_name
     a = []
     a = self.name.split
