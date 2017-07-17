@@ -8,9 +8,9 @@ class User < ApplicationRecord
   validates_presence_of :name
   
   def first_name
-    a = []
-    a = self.name.split
-    a[0]
+     a = []
+     a = self.name.split
+     a[0]
   end
   
   if !a[0] && !a[-1]
