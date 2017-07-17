@@ -29,7 +29,7 @@ class PortfoliosController < ApplicationController
 		@portfolio_items = Portfolio.find(params[:id])
 		respond_to do |format|
 			if @portfolio_items.update(portfolio_p)
-				format.html { redirect_to @blog, notice: 'Yo homeslice, ya\' blog was updated good.' }
+				format.html { redirect_to @portfolio_items, notice: 'Yo homeslice, ya\' blog was updated good.' }
 			else
 				format.html { render :edit }
 			end

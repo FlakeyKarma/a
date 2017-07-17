@@ -23,6 +23,7 @@
 
     <%= yield %>
     
+    <%= render partial: 'portfolio_item', collection: @portfolio_item %> 
     <%= render "shared/nav", location: 'top' %>
     
     <%= sourceH("portfolios") %>

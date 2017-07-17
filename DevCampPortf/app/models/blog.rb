@@ -6,4 +6,8 @@ class Blog < ApplicationRecord
 	validates_presence_of :title
 	
 	belongs_to :topic
+	
+	def self.special_blogs
+		all
+	end
 end
