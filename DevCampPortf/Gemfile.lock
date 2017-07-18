@@ -1,3 +1,9 @@
+GIT
+  remote: https://github.com/FlakeyKarma/flakeykarmas_vi_too.git
+  revision: 462a46f67c562e0a66386bf2bef35dccc8bd619c
+  specs:
+    flakeykarmas_vi_too (0.1.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -178,6 +184,7 @@ DEPENDENCIES
   byebug
   coffee-rails (~> 4.2)
   devise (~> 4.3)
+  flakeykarmas_vi_too!
   friendly_id (~> 5.1.0)
   jbuilder (~> 2.5)
   jquery-rails

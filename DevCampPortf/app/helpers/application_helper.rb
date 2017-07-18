@@ -14,4 +14,7 @@ module ApplicationHelper
 				content_tag(:p, a, class: "sourceG")
 		    end
 	end
+	def copRi_g
+		FlakeykarmasViToo::Rend.copyR '♠FlakeyKarma♠', 'All rights reserved boy'
+	end
 end

@@ -23,9 +23,10 @@
 
     <%= yield %>
     
-    <%= render partial: 'portfolio_item', collection: @portfolio_item %> 
-    <%= render "shared/nav", location: 'top' %>
+    <%= render "shared/nav", location: 'top' %>    
     
+    <%= render partial: 'portfolio_item', collection: @portfolio_item %> 
+
     <%= sourceH("portfolios") %>
   </body>
 </html>
