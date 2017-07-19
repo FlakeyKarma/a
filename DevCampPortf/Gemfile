@@ -58,4 +58,4 @@ gem 'devise', '~> 4.3'
 
 gem 'bootstrap', '~> 4.0.0.alpha6'
 
-gem 'flakeykarmas_vi_too', git: 'https://github.com/FlakeyKarma/flakeykarmas_vi_too.git'
+gem'gem_view_tool', git: 'https://github.com/FlakeyKarma/gem_view_tool'
