@@ -61,3 +61,5 @@ gem 'bootstrap', '~> 4.0.0.alpha6'
 #gem 'gem_v0', git: 'https://github.com/FlakeyKarma/gem_v0'
 
 gem 'gem_v', '~> 0.1.0'
+
+gem 'petergate', '~> 1.7.5'
