@@ -24,23 +24,23 @@ module ApplicationHelper
     [
       {
         url: root_path,
-        title: 'Home'
+        title: '//127.0.0.1'
       },
       {
         url: about_me_path,
-        title: 'About Me'
+        title: '//AboutMe'
       },
       {
-        url: contact_path,
-        title: 'Contact'
+        url: talk_to_me_path,
+        title: '//ContactMe'
       },
       {
         url: blogs_path,
-        title: 'Blog'
+        title: '//BlogDawg'
       },
       {
         url: portfolios_path,
-        title: 'Portfolio'
+        title: '//Portfolioli'
       },
       {
         url: tech_news_path,
@@ -50,13 +50,13 @@ module ApplicationHelper
   end
 
   def nav_helper style, tag_type
-    nav_links = ''
+		nav_links = ''
+		
+		nav_items.each do|item|
+			nav_links << "<#{tag_type}><a href='#{item[:url]}' class='#{style} #{active? item[:url]}'>#{item[:title]}</a></#{tag_type}>"
+		end
 
-    nav_items.each do |item|
-      nav_links << "<#{tag_type}><a href='#{item[:url]}' class='#{style} #{active? item[:url]}'>#{item[:title]}</a></#{tag_type}>"
-    end
-
-    nav_links.html_safe
+		nav_links.html_safe
   end
 
   def active? path
