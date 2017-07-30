@@ -55,4 +55,7 @@ class PortfoliosController < ApplicationController
 	def portfolio_p
 		params.require(:portfolio).permit(:title,:subtitle,:body,technologies_attrbutes:[:name])
 	end
+	def set_portfolio_item
+		@portfolio_items = Portfolio.find(params[:id])
+	end
 end
