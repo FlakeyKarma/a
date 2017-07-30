@@ -4,6 +4,8 @@
 		<div class="row">
 
 			<%= link_to "Create new items yo", new_portfolio_url if logged_in?(:site_admin) %>
+		</div>
+		<div class="row">
 			<%= render partial: 'portfolio_item', collection: @portfolio_items %>
 		</div>
 	</div>
