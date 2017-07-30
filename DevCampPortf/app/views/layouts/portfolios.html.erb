@@ -14,11 +14,11 @@
     
     <%= render 'shared/portf_nav' %>
     
-    <%= render 'shared/portf_mast' %>
+    <%= render 'shared/portf_mast' unless logged_in?(:site_admin) %>
     
-    <p class="notice"><%= notice %></p>
+    <!--<p class="notice"><%= notice %></p>
     
-    <p class="alert"><%= alert %></p>
+    <p class="alert"><%= alert %></p>-->
 
     <%= yield %>
     
