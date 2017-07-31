@@ -1,8 +1,18 @@
 class PortfoliosController < ApplicationController
+	before_action :set_portfolio_item, only: [:edit, :show, :update, :destroy]
+	layout 'portfolios'
+	access all: [:show, :index, :angular], user: {except: [:sort, :destroy, :new, :create, :update, :edit]}, site_admin: :all
+
 	def index
 		#@portfolio_items = Portfolio.A
 		#@portfolio_items = Portfolio.rub
-		@portfolio_items = Portfolio.all
+		@portfolio_items = Portfolio.by_position
+	end
+	def sort
+		params[:order].each do |key, value|
+			Portfolio.find(value[:id]).update(position: value[:position])
+		end
+		render nothing: true
 	end
 	def angular
 		@angular_portfolio_items = Portfolio.A
@@ -29,7 +39,7 @@ class PortfoliosController < ApplicationController
 		@portfolio_items = Portfolio.find(params[:id])
 		respond_to do |format|
 			if @portfolio_items.update(portfolio_p)
-				format.html { redirect_to @blog, notice: 'Yo homeslice, ya\' blog was updated good.' }
+				format.html { redirect_to @portfolio_items, notice: 'Yo homeslice, ya\' blog was updated good.' }
 			else
 				format.html { render :edit }
 			end
@@ -50,5 +60,8 @@ class PortfoliosController < ApplicationController
 	
 	def portfolio_p
 		params.require(:portfolio).permit(:title,:subtitle,:body,technologies_attrbutes:[:name])
+	end
+	def set_portfolio_item
+		@portfolio_items = Portfolio.find(params[:id])
 	end
 end

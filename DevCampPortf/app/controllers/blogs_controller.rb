@@ -1,15 +1,21 @@
 class BlogsController < ApplicationController
   before_action :set_blog, only: [:show, :edit, :update, :destroy]
+  layout "blogs"
+  access all: [:show, :index], user: {except: [:destroy, :new, :create, :update, :edit, :toggle_status]}, site_admin: :all
 
   # GET /blogs
   # GET /blogs.json
   def index
-    @blogs = Blog.all
+    #byebug
+    @blogs = Blog.page(params[:page]).per(5)
+    @page_title = "My PortfBlo"
   end
 
   # GET /blogs/1
   # GET /blogs/1.json
   def show
+    @blog_title = @blog.title
+    @seo_keywords = @blog.body
   end
 
   # GET /blogs/new

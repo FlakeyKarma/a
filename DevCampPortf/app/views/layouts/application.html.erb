@@ -1,27 +1,38 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>DevCampPortf</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title><%= @page_title %></title>
     <%= csrf_meta_tags %>
+
+    <meta name="keywords" content="<%= @seo_keywords %>" />
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-    
-    <% if current_user.is_a?(User) %>
-      <%= link_to "logout", destroy_user_session_path, method: :delete %>
-    <% else %>
-      <%= link_to "register", new_user_registration_path %>
-      <%= link_to "login", new_user_session_path %>
-    <% end %>
-    <%= yield %>
-    
-    <% if session[:source] %>
-      <p>Thanks for visiting me from... oh right! <%= session[:source] %>! I don't believe I've heard of <%= session[:source] %>. Sincerest of apologies, though <%= session[:source] %> musn't be that popular if I don't know about it.</p>
-    <% end %>
+    <div class="site-wrapper">
+
+      <div class="site-wrapper-inner">
+
+        <div class="cover-container">
+
+          <%= render "shared/application_nav" %>
+      
+          <%= yield %>
+          
+          <br>
+          <br>
+          
+          <%= render "shared/application_footer" %>
+          
+          <%= sourceH("application") %>
+          
+        </div>
+      </div>
+    </div>
   </body>
 </html>

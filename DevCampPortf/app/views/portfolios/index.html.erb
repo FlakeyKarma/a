@@ -1,12 +1,12 @@
-<h1>Portfolio Items</h1>
+<div class="album text-muted">
+	<div class="container">
 
-<%= link_to "Create new items yo", new_portfolio_url %>
+		<div class="row">
 
-<% @portfolio_items.each do |portfolio_items| %>
-	<p><%= link_to portfolio_items.title, portfolio_show_path(portfolio_items.id) %></p>
-	<p><%= portfolio_items.subtitle %></p>
-	<p><%= portfolio_items.body %></p>
-	<%= portfolio_items.thumb_image  unless portfolio_items.thumb_image.nil? %>
-	<%= link_to "Edit sumthin\'", edit_portfolio_path(portfolio_items.id) %>
-	<%= link_to 'Delete Item', portfolio_path(portfolio_items), method: :delete, data: {confirm: 'You sure tho?'} %>
-<% end %>
+			<%= link_to "Create new items yo", new_portfolio_url if logged_in?(:site_admin) %>
+		</div>
+		<div class="row <%= "sortable" if logged_in?(:site_admin) %>">
+			<%= render partial: 'portfolio_item', collection: @portfolio_items %>
+		</div>
+	</div>
+</div>
