@@ -1,7 +1,7 @@
 <%= form_for(@portfolio_items) do |f| %>
   <% if @portfolio_items.errors.any? %>
     <% @portfolio_items.errors.full_messages.each do |error| %>
-    	<%= js add_gritter(error, title: "Cognizant Portfolio Page", sticky: false) %>
+    	<%= alerts error %>
     <% end %>
   <% end %>
   
