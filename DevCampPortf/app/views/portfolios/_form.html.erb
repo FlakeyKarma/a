@@ -1,7 +1,7 @@
 <%= form_for(@portfolio_items) do |f| %>
   <% if @portfolio_items.errors.any? %>
     <% @portfolio_items.errors.full_messages.each do |error| %>
-    	<%= alerts error %>
+    	<%= alertG error %>
     <% end %>
   <% end %>
   
