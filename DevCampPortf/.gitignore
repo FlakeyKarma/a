@@ -18,3 +18,5 @@
 
 # No tOuch SEcrets
 /config/secrets.yml
+
+.env

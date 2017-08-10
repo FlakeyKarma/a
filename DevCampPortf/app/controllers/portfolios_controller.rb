@@ -19,14 +19,13 @@ class PortfoliosController < ApplicationController
 	end
 	def new
 		@portfolio_items = Portfolio.new
-		3.times {@portfolio_items.technologies.build}
 	end
 	def create
 		@portfolio_items = Portfolio.new(portfolio_p)
 		
 		respond_to do |format|
 			if @portfolio_items.save
-				format.html {redirect_to portfolios_path, notice: 'Your portfolio item is now live.'}
+				format.html { redirect_to portfolios_path, notice: 'Your portfolio item is now live.' }
 			else
 				format.html{render :new}
 			end
@@ -36,7 +35,6 @@ class PortfoliosController < ApplicationController
 		@portfolio_items = Portfolio.find(params[:id])
 	end
 	def update
-		@portfolio_items = Portfolio.find(params[:id])
 		respond_to do |format|
 			if @portfolio_items.update(portfolio_p)
 				format.html { redirect_to @portfolio_items, notice: 'Yo homeslice, ya\' blog was updated good.' }
@@ -59,7 +57,7 @@ class PortfoliosController < ApplicationController
 	private
 	
 	def portfolio_p
-		params.require(:portfolio).permit(:title,:subtitle,:body,:main_image,:thumb_image,technologies_attrbutes:[:name])
+		params.require(:portfolio).permit(:title,:subtitle,:body,:main_image,:thumb_image,technologies_attrbutes:[:id, :name, :_destroy])
 	end
 	def set_portfolio_item
 		@portfolio_items = Portfolio.find(params[:id])
