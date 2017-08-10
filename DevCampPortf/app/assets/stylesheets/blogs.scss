@@ -1,6 +1,3 @@
-// Place all the styles related to the Blogs controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
 @import "bootstrap";
 @import "font-awesome";
 @import "gritter";
@@ -162,6 +159,7 @@ h6, .h6 {
  */
 
 .blog-footer {
+  margin-top: 20px;
   padding: 2.5rem 0;
   color: #999;
   text-align: center;
@@ -173,7 +171,32 @@ h6, .h6 {
 }
 
 /*
-*/
+ * Custom styles
+ */
+
 .social-links li {
-  font-size: 1.5em;
+  font-size: 2.5em;
+}
+
+.comment-card > .card {
+  margin-top: 15px;
+}
+
+.comment-attribution {
+  font-size: .8em;
+  font-style: italic;
+}
+
+.comment-name {
+  font-weight: 700;
+}
+
+.comment-attribution {
+  font-size: .8em;
+  font-style: italic;
+  
+}
+
+.comment-name {
+  font-weight: 700;
 }

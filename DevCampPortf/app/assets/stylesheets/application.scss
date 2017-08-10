@@ -172,7 +172,7 @@ body {
   .masthead,
   .mastfoot,
   .cover-container {
-    width: 55rem;
+    width: 65rem;
   }
 }
 
@@ -233,4 +233,45 @@ body {
 
 .app-footer {
   color: white;
+}
+
+.tech-news {
+  color:black;
+  margin: 20px;
+}
+
+.tech-news a {
+  color: LimeGreen;
+}
+
+.tech-news > .card {
+  padding: 25px;
+}
+
+#oval {
+ width: 500px;
+ height: 300px;
+ -moz-border-radius: 400px/50px;
+ -webkit-border-radius: 400px/50px;
+ border-radius: 100px/50px;
+ text-align: center;
+ background-color: rgba(3,78,136,0.7);
+ line-height: 60px;
+ margin: 20px auto;
+ position: relative;
+ padding: 25px;
+ border-width: 5px;
+ border-style: groove double;
+ 
+}
+
+.tech-news > #oval {
+  padding: 25px;
+}
+
+.Bord {
+  border-style: groove;
+  border-color: gray;
+  border-width: 8px;
+  margin: auto;
 }

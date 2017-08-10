@@ -7,8 +7,8 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 10.times do |blogs|
 	Blog.create!(
-		title: "My blog post #{blogs}",
-		body: "J",
+		title: "Blog post #{blogs}",
+		body: "Emotional post about stuff that's slightly relatable.",
 		#topic_id: Topic.last.id
 		)
 end
