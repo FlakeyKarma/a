@@ -1,5 +1,5 @@
 module PagesHelper
-  def twiPars tweet
+  def twiPars t
     regex = %r{
       \b
       (
@@ -18,7 +18,7 @@ module PagesHelper
       )
     }ix
 
-    tweet.gsub(regex) do |url|
+    t.gsub(regex) do |url|
       "<a href='#{url}' target='_blank'>#{url}</a>"
     end.html_safe
   end
