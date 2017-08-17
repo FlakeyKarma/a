@@ -4,7 +4,6 @@ module PortfoliosHelper
 	end
 	
 	def portfolio_img a, b
-
 		if a.model.main_image? || a.model.thumb_image?
 			a
 		elsif b == 'thumb'

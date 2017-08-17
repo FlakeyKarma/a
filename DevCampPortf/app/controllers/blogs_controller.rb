@@ -7,13 +7,19 @@ class BlogsController < ApplicationController
   # GET /blogs
   # GET /blogs.json
   def index
-    #byebug
+
     if logged_in?(:site_admin)
-      @blogs = Blog.recent.page(params[:page]).per(5)
+
+      @blogs = Blog.recent.page(params[:page])
+
     else
-      @blogs = Blog.published.page(params[:page]).per(5)
+
+      @blogs = Blog.published.recent.page(params[:page])
+
     end
+
     @page_title = "My PortfBlo"
+
   end
 
   # GET /blogs/1
@@ -87,7 +93,7 @@ class BlogsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def blog_params
-      params.require(:blog).permit(:title, :body)
+      params.require(:blog).permit(:title, :body, :topic_id)
     end
     
     def set_sidebar_topics

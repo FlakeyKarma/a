@@ -75,5 +75,4 @@ module ApplicationHelper
     js add_gritter(msg, title: "Cognizant Portfolio Page", sticky: false)
   end
 
-	
 end
