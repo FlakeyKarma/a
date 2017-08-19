@@ -44,7 +44,7 @@ module ApplicationHelper
       },
       {
         url: tech_news_path,
-        title: 'Tech News'
+        title: '//DankMemes'
       },
     ]
   end
@@ -54,6 +54,7 @@ module ApplicationHelper
 		
 		nav_items.each do |item|
 			nav_links << "<#{tag_type}><a href='#{item[:url]}' class='#{style} #{active? item[:url]}'>#{item[:title]}</a></#{tag_type}>"
+			
 		end
 
 		nav_links.html_safe
