@@ -1,12 +1,16 @@
-<div class="blog-masthead">
+<nav class="navbar navbar-toggleable-md navbar-light bg-faded blog-nav">
+  <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  
   <div class="container">
-    <nav class="nav blog-nav">
-      <%= link_to "//127.0.0.1", root_path, class: 'nav-link' %>
-      <%= link_to "//AboutMe", about_me_path, class: 'nav-link' %>
-      <%= link_to "//ContactMe", talk_to_me_path, class: 'nav-link' %>
-      <%= link_to "//Blog", blogs_path, class: 'nav-link' %>
-      <%= link_to "//Portfolio", portfolios_path, class: 'nav-link' %>
-      <%= login_helper 'nav-link' %>
-    </nav>
+    <%= link_to "FlakeyKarma", root_path, class: 'navbar-brand' %>
+    
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <%= fa_icon "ra" %><%= nav_helper 'nav-link color: red', 'li' %><%= fa_icon "ra" %>
+        <%= login_helper 'nav_link' %>
+      </ul>
+    </div>
   </div>
-</div>
+</nav>

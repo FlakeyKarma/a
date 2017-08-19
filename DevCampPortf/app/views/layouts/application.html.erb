@@ -8,6 +8,8 @@
     <%= csrf_meta_tags %>
 
     <meta name="keywords" content="<%= @seo_keywords %>" />
+    
+    <%= favicon_link_tag 'favicons/favicon.ico' %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
@@ -22,7 +24,7 @@
           
           <!--<div id="background"></div>-->
           
-          <%= video_tag('https://www.youtube.com/watch?v=4Tr0otuiQuU', id: 'background', autoplay: true, loop: true, muted: true, poster: 'Declaration.jpg') %>
+          <%= video_tag('https://www.youtube.com/watch?v=4Tr0otuiQuU', id: 'background', autoplay: true, loop: true, muted: false) %>
 
           <%= render "shared/application_nav" %>
       
@@ -34,8 +36,6 @@
           <%= render "shared/application_footer" %>
           
           <%= alerts %>
-          
-          <%= sourceH("application") %>
           
         </div>
       </div>

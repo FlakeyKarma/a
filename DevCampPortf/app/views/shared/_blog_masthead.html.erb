@@ -1,7 +1,12 @@
 <div class="blog-header">
   <div class="container">
     <h1 class="blog-title">//BlogSite</h1>
-    <p class="lead blog-description">An example blog template built with Bootstrap.</p>
-    <%= link_to 'Make a New Blog, Dawg!', new_blog_path if logged_in?(:site_admin) %>
+    <p class="lead blog-description">My hip blog site!</p>
+    <span>
+      <%= link_to 'Make a New Blog, Dawg!', new_blog_path if logged_in?(:site_admin) %>||
+    </span>
+    <span>
+      <%= link_to "Topics", topics_path %>
+    </span>
   </div>
 </div>

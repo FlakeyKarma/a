@@ -1,29 +1,64 @@
-<h1>About Me</h1>
-
-<hr>
-
-<div class="row">
-	<div class="col-md-4">
-		
-		<%= image_tag "14-093.jpg", width: 300, alt: "Profile Image" %>
+<div class="app-card-container">
+	<div class="card">
+		<h1>About Me</h1>
 	
-	</div>
-	
-	<div class="col-md-8">
-		<p>Just an average guy who likes long walks on the beach and puppies.
-		Actually, though both statements are true,
-		there's more to be known. If you throw something at me to learn,
-		then I'll most likely pick it up and work at learning the topic
-		simply because no bit of knowledge is a waste.</p>
+		<hr>
 		
-		<ul><p size="50">Just a few of my <strong>main</strong> interests</p>
-			<li>Politics</li>
-			<li>Coding</li>
-			<li>Economics</li>
-			<li>Memes</li>
-			<li>Cats && Dogs</li>
-			<li>Ethics</li>
-			<li>Anything else you could think of, there's a 99.99% chance that I'd like it</li>
-		</ul>	
+		<div class="row">
+			<div class="col-md-4">
+				
+				<%= image_tag "14-093.jpg", width: 300, alt: "Profile Image", class: 'profile-img' %>
+			
+				<div class="skills">
+					<% @skills.each do |s| %>
+						<div class="skill">
+							<h4><%= s.title %></h4>
+							<div class="progress">
+								<div class="progress-bar progress-bar-striped bg-warning" role="progressbar" aria-valuenow="<%= s.percent_utilized %>" aria-valuemax="100" style="width: <%= s.percent_utilized %>%">
+									
+								</div>
+							</div>	
+						</div>
+					<% end %>
+				</div>
+			</div>
+			
+			<div class="col-md-8">
+				<p>Just an average guy who likes long walks on the beach and puppies.
+				Actually, though both statements are true,
+				there's more to be known. If you throw something at me to learn,
+				then I'll most likely pick it up and work at learning the topic
+				simply because no bit of knowledge is a waste.</p>
+				
+				<ul><p size="50">Just a few of my <strong>main</strong> interests</p>
+					<li>Politics</li>
+					<li>Coding</li>
+					<li>Economics</li>
+					<li>Memes</li>
+					<li>Cats && Dogs</li>
+					<li>Ethics</li>
+					<li>Anything else you could think of, there's a 99.99% chance that I'd like it</li>
+				</ul>
+				<p>
+					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#jobHistory" aria-expanded="false" aria-controls="jobHistory"> Job History </button>
+
+					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#Education" aria-expanded="false" aria-controls="Education"> Education </button>
+				</p>
+				<p>
+					<div class="collapse" id="jobHistory">
+						<div class="card card-block">
+							~>Jobz
+						</div>
+					</div>
+				</p>
+				<p>
+					<div class="collapse" id="Education">
+						<div class="card card-block">
+							~>Educationz
+						</div>
+					</div>
+				</p>
+			</div>
+		</div>	
 	</div>
 </div>
