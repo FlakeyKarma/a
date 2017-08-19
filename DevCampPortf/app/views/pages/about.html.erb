@@ -9,6 +9,18 @@
 				
 				<%= image_tag "14-093.jpg", width: 300, alt: "Profile Image", class: 'profile-img' %>
 			
+				<div class="skills">
+					<% @skills.each do |s| %>
+						<div class="skill">
+							<h4><%= s.title %></h4>
+							<div class="progress">
+								<div class="progress-bar progress-bar-striped bg-warning" role="progressbar" aria-valuenow="<%= s.percent_utilized %>" aria-valuemax="100" style="width: <%= s.percent_utilized %>%">
+									
+								</div>
+							</div>	
+						</div>
+					<% end %>
+				</div>
 			</div>
 			
 			<div class="col-md-8">
