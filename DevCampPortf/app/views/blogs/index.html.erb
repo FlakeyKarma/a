@@ -1,11 +1,10 @@
 <div class="col-sm-8 blog-main">
   
-  <h1><%= @topic.title %></h1>
   
-  <%= will_paginate @blogs %>
+  <%= paginate @blogs %>
   
   <%= render @blogs %>
   
-  <%= will_paginate @blogs %>
+  <%= paginate @blogs %>
   
 </div>
